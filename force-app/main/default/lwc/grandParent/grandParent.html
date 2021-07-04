@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Grand Parent">
+        <lightning-input label="enter any value" value={message} onchange={handleChange}></lightning-input>
+        <c-parent onchildbutton={handleChildClick}>  message={message}  </c-parent>
+    </lightning-card>
+    
+</template>
