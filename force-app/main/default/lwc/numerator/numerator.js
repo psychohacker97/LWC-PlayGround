@@ -26,7 +26,7 @@ export default class Numerator extends LightningElement {
     }
     handleDivision(event){
         const divisionFactor = event.detail;
-        this.counter= divisionFactor ;
+        this.counter/= divisionFactor ;
     }
     @api
     maximizeCounter(value){
