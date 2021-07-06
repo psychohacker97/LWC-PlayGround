@@ -1,12 +1,14 @@
 import { LightningElement } from 'lwc';
 
 export default class Augmentor extends LightningElement {
+    factors = [1000000,2000000,3000000,4000000]
     startCounter = 0;
     handleStartChange(event){
         this.startCounter = parseInt(event.target.value);
     }
 
-    handleMaximizeCounter(){
-        this.template.querySelector('c-numerator').maximizeCounter();
+    handleMaximizeCounter(event){
+        const factor = event.target.dataset.factor ;
+        this.template.querySelector('c-numerator').maximizeCounter(factor);
     }
 }

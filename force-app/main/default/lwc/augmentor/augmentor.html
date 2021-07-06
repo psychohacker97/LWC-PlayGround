@@ -10,13 +10,18 @@
                     value={startCounter}
                     onchange={handleStartChange} >
                 </lightning-input>
-                <lightning-button
-                    class="slds-var-p-vertical_x-small"
-                    label="Add 1m To Counter"
-                    onclick={handleMaximizeCounter}>
-                </lightning-button>
             </lightning-layout-item>
-        </lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small" onbuttonclick={handleMaximizeCounter}>
+                    <template for:each={factors} for:item="factor">
+                      <c-button
+                        key={factor}
+                        label={factor}
+                        data-factor={factor}
+                        icon="utility:close">
+                      </c-button>
+                    </template>
+                  </lightning-layout-item>
+            </lightning-layout>
         <c-numerator
             class = "slds-show slds-is-relative"
             counter={startCounter} >
