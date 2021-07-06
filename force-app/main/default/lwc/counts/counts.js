@@ -20,8 +20,10 @@ export default class Counts extends LightningElement {
       this.counter += message.constant;
     }else if(message.operator == 'subtract') {
       this.counter -= message.constant;
-    } else {
+    } else if(message.operator == 'multiply'){
       this.counter *= message.constant;
+    } else{
+      this.counter /= message.constant ;
     }
   }
   connectedCallback() {

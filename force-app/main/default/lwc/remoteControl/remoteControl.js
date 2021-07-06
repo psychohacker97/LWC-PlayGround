@@ -30,6 +30,14 @@ export default class RemoteControl extends LightningElement {
         };
         publish(this.messageContext, COUNT_UPDATED_CHANNEL, payload);
     }
+    handleDivision(event) {
+        const divFactor = event.detail ;
+        const payload = {
+            operator: 'division',
+            constant: divFactor
+        };
+        publish(this.messageContext, COUNT_UPDATED_CHANNEL, payload);
+    }
 
 
 }
